@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="x-icon" href="favicon.png" type="image/x-icon">
+  <title>Chkobba</title>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+  </script>
+  
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="infos">
+    <h2> Valeur : <span id="targetvalue">11</span></h2>
+    <h2> Numéro Rounda: <span id="roundnumber">1</span></h2>
+    <h2> Numéro Jaria : <span id="jarianumber">1</span></h2>
+  </div>
+
+
+  <div class="stats">
+
+    <h2>Le score du Joueur : <span id="playerscore">0</span></h2>
+      <p>El haya:<span id="p-haya">0</span></p>
+      <p>El Bermila:<span id="p-bermila">0</span></p>
+      <p>El Carta  :<span id="p-carta">0</span></p>
+      <p>El Dineri :<span id="p-dineri">0</span></p>
+      <p>Chkeyb :<span id="p-chkeyb">0</span></p>
+    <h2>Bot Score : <span id="botscore">0</span></h2>
+      <p>El haya:<span id="b-haya">0</span></p>
+      <p>El Bermila:<span id="b-bermila">0</span></p>
+      <p>El Carta  :<span id="b-carta">0</span></p>
+      <p>El Dineri :<span id="b-dineri">0</span></p>
+      <p>Chkeyb :<span id="b-chkeyb">0</span></p>
+    </div>
+
+
+    <div id="popup-window" class="popup">
+    <div class="popup-content">
+      <h2>Bienvenue au jeu de cartes Chkobba ! </h2>
+      <p>Veuillez choisir le score final : <p>
+      <label><input id="radio1" type="radio" name="option" value="11" onclick="setOption(11)" checked> 11</label><br>
+      <label><input id="radio2" type="radio" name="option" value="21" onclick="setOption(21)"> 21</label><br>
+      <button id="start-game-btn" onclick="startGame()"> Commencer </button>
+    </div>
+  </div>
+
+
+  <div class="w3-row bot">
+    <div class="w3-center" id="player1">
+      <img id="card1" onclick="BotAttack(0)" class="w3-animate-left bothands">
+      <img id="card2" onclick="BotAttack(1)" class="w3-animate-left bothands">
+      <img id="card3" onclick="BotAttack(2)" class="w3-animate-left bothands">
+    </div>
+  </div>
+
+
+  <!--TLes cartes de la table -->
+  <div class="w3-row table">
+    <div class="w3-center" id="mekle">
+      <img id="mekle0" class="w3-animate-left tablecards">
+      <img id="mekle1" class="w3-animate-left tablecards">
+      <img id="mekle2" class="w3-animate-left tablecards">
+      <img id="mekle3" class="w3-animate-left tablecards">
+    </div>
+  </div>
+
+
+  <!--Les cartes du Joueur -->
+  <div class="w3-row player">
+    <div class="w3-center" id="player2">
+      <img id="card_1" onclick="PlayerAttack(0,'card_1')" class="w3-animate-left playerhands">
+      <img id="card_2" onclick="PlayerAttack(1,'card_2')" class="w3-animate-left playerhands">
+      <img id="card_3" onclick="PlayerAttack(2,'card_3')" class="w3-animate-left playerhands">
+    </div>
+  </div>
+  <div>
+
+  </div>
+
+  <div id="id01" class="w3-modal">
+    <div class="w3-modal-content w3-red">
+      <div class="w3-container">
+        <span onclick="document.getElementById('id01').style.display='none'"
+          class="w3-button w3-display-topright">&times;</span>
+        <p>Game over</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
